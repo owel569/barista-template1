@@ -53,6 +53,8 @@ class BaristaBackendTest(unittest.TestCase):
         if not csrf_token:
             # Try to extract from cookies
             csrf_token = session.cookies.get('csrftoken')
+            
+        self.assertIsNotNone(csrf_token, "CSRF token not found in response")
         
         # Prepare form data
         form_data = {
@@ -70,7 +72,10 @@ class BaristaBackendTest(unittest.TestCase):
         response = session.post(
             f"{self.BASE_URL}/reservation/", 
             data=form_data,
-            headers={'Referer': f"{self.BASE_URL}/reservation/"}
+            headers={
+                'Referer': f"{self.BASE_URL}/reservation/",
+                'X-CSRFToken': csrf_token
+            }
         )
         
         # Check if the submission was successful (should redirect with status code 302)
@@ -86,6 +91,7 @@ class BaristaBackendTest(unittest.TestCase):
         
         # Check for success message
         self.assertIn('Réservation créée avec succès', response.text)
+        print("✅ Reservation form submission successful")
         print("✅ Reservation form submission successful")
         
     def test_static_files(self):
