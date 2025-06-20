@@ -1,0 +1,15 @@
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.pot
+db.sqlite3
+staticfiles/
+static/
+.DS_Store
+Thumbs.db
+node_modules/
+yarn.lock
