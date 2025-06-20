@@ -1,0 +1,14 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 20, 2025 - 06:06:20
+Django version 3.1.12, using settings 'barista_cafe.settings'
+Starting development server at http://0.0.0.0:8001/
+Quit the server with CONTROL-C.
+[20/Jun/2025 06:06:26] "HEAD / HTTP/1.1" 200 20050
+[20/Jun/2025 06:06:31] "GET / HTTP/1.1" 200 20050
+[20/Jun/2025 06:06:35] "GET /reservation/ HTTP/1.1" 200 12235
+[20/Jun/2025 06:06:50] "GET /reservation/ HTTP/1.1" 200 12235
+Forbidden (CSRF cookie not set.): /reservation/
+[20/Jun/2025 06:06:50] "POST /reservation/ HTTP/1.1" 403 2864
