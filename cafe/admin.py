@@ -1,24 +1,4 @@
 from django.contrib import admin
-<<<<<<< HEAD
-from .models import Reservation
-
-@admin.register(Reservation)
-class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'date', 'time', 'number_of_people', 'status', 'created_at')
-    list_filter = ('status', 'date')
-    search_fields = ('name', 'phone', 'message')
-    ordering = ('-created_at',)
-    readonly_fields = ('created_at',)
-    
-    fieldsets = (
-        (None, {
-            'fields': ('name', 'phone', 'date', 'time', 'number_of_people', 'message', 'status')
-        }),
-        ('Informations additionnelles', {
-            'fields': ('created_at',),
-        }),
-    )
-=======
 from .models import MenuItem, Reservation, Testimonial, Contact
 
 @admin.register(MenuItem)
@@ -49,4 +29,3 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields = ['name', 'email', 'subject']
     ordering = ['-created_at']
     readonly_fields = ['created_at']
->>>>>>> ffce6af89a3517af95eb5d7be291ed190449e930
