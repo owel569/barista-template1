@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 """
 URL configuration for barista_cafe project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
+=======
+"""barista_cafe URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+>>>>>>> ffce6af89a3517af95eb5d7be291ed190449e930
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,8 +23,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
+=======
+from django.conf import settings
+from django.conf.urls.static import static
+>>>>>>> ffce6af89a3517af95eb5d7be291ed190449e930
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cafe.urls')),
 ]
+<<<<<<< HEAD
+=======
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+>>>>>>> ffce6af89a3517af95eb5d7be291ed190449e930
